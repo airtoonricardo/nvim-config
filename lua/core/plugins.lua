@@ -30,8 +30,13 @@ require("lazy").setup({
 		end,
     },
     {
+        "HiPhish/nvim-ts-rainbow2",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        config = conf("nvim-ts-rainbow"),
+    },
+    {
 		-- File tree
-		'nvim-tree/nvim-tree.lua', 
+		'nvim-tree/nvim-tree.lua',
 		dependencies = {'nvim-tree/nvim-web-devicons'},
 		config = conf("nvim-tree")
     },
@@ -50,12 +55,12 @@ require("lazy").setup({
 	{
 		-- File Searching
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		dependencies = { 
+		dependencies = {
 			'nvim-lua/plenary.nvim',
-			{ 
-				'nvim-telescope/telescope-fzf-native.nvim', 
-				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
-			} 
+			{
+				'nvim-telescope/telescope-fzf-native.nvim',
+				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+			}
 		},
 		config = conf("telescope")
 	},
@@ -73,12 +78,15 @@ require("lazy").setup({
 	{'hrsh7th/cmp-path'},
 	{'hrsh7th/cmp-cmdline'},
 	{
-		'hrsh7th/nvim-cmp', 
+		'hrsh7th/nvim-cmp',
 		config = conf("nvim-cmp")
 	},
 	{ 'hrsh7th/vim-vsnip' },
 	{ 'hrsh7th/vim-vsnip-integ' },
 	-- Tmux Navigation
     {'christoomey/vim-tmux-navigator'},
+	-- Git integration
+	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
+	{'sindrets/diffview.nvim', config = conf("diffview")}
 
 })

@@ -26,7 +26,7 @@ vim.opt.showmode = true
 
 vim.opt.fillchars = {
   fold = " ", -- remove folding chars
-  vert = "\\", -- set vsplit chars
+  vert = " ", -- set vsplit chars
 }
 
 vim.opt.guicursor = vim.opt.guicursor + 'a:-Cursor-blinkwait155-blinkoff130-blinkon155'
@@ -49,3 +49,5 @@ vim.opt.so = 5
 
 vim.opt.completeopt = 'menu,menuone,noselect'
 
+-- Highlight yank
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
