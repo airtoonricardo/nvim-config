@@ -8,7 +8,7 @@ return function ()
 
     require("nvim-tree").setup {
         git = {
-            enable = false,
+            enable = true,
             ignore = false,
             timeout = 400,
         },
