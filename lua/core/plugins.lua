@@ -26,8 +26,16 @@ require("lazy").setup({
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme tokyonight]])
+			-- vim.cmd([[colorscheme tokyonight]])
 		end,
+    },
+    {
+        'marko-cerovac/material.nvim',
+        config = function ()
+            vim.g.termguicolors=true
+            vim.g.material_style = 'deep ocean'
+			vim.cmd([[colorscheme material]])
+        end
     },
     {
         "HiPhish/nvim-ts-rainbow2",
