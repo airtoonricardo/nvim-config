@@ -31,13 +31,23 @@ return function ()
     -- Setting default capabilities on all LSP Servers
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    function add_capabilities()
+    local function add_capabilities()
         for _, lsp in ipairs(servers) do
             require('lspconfig')[lsp].setup {
                 capabilities = capabilities,
                 on_attach = attach_function,
             }
         end
+        require('lspconfig')['lua_ls'].setup{
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        -- Get the language server to recognize the `vim` global
+                        globals = {'vim'},
+                    },
+                },
+            }
+        }
     end
 
     add_capabilities()
