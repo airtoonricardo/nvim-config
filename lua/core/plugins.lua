@@ -135,4 +135,8 @@ require("lazy").setup({
 	-- Git integration
 	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
 	{'sindrets/diffview.nvim', config = conf("diffview")},
+    {'simeji/winresizer',
+        init = function() vim.g.winresizer_start_key = '<C-p>' end
+    },
+    { 'mg979/vim-visual-multi', branch = "main" },
 })
