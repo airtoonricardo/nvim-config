@@ -31,13 +31,13 @@ require("lazy").setup({
     },
     {
         "HiPhish/nvim-ts-rainbow2",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        dependencies = "nvim-treesitter/nvim-treesitter",
         config = conf("nvim-ts-rainbow"),
     },
     {
 		-- File tree
 		'nvim-tree/nvim-tree.lua',
-		dependencies = {'nvim-tree/nvim-web-devicons'},
+		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = conf("nvim-tree")
     },
 
@@ -87,6 +87,28 @@ require("lazy").setup({
     {'christoomey/vim-tmux-navigator'},
 	-- Git integration
 	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
-	{'sindrets/diffview.nvim', config = conf("diffview")}
+	{'sindrets/diffview.nvim', config = conf("diffview")},
+	-- BEHAVIOUR
+	{
+		"antoinemadec/FixCursorHold.nvim",
+		init = function()
+			vim.g.cursorhold_updatetime = 250
+		end,
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = conf("nvim-web-devicons"),
+		name = "nvim-web-devicons",
+		lazy = true,
+	},
+    {
+        'norcalli/nvim-colorizer.lua',
+		config = function ()
+			require("colorizer").setup({
+				"*",
+				"!git"
+			})
+		end,
+    }
 
 })
