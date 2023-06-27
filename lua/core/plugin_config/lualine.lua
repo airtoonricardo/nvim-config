@@ -3,7 +3,7 @@ return function ()
         options = {
             icons_enabled = true,
             -- theme = 'dracula',
-            theme = 'tokyonight',
+            theme = 'material',
             component_separators = { left = '╲', right = '╱' },
             section_separators = { left = '', right = '' },
             disabled_filetypes = { 'NvimTree' },
