@@ -5,7 +5,7 @@ return function ()
             'solidity',
             'rust',
             'python',
-            'lua',
+            -- 'lua',
         },
         sync_install = false,
         highlight = {

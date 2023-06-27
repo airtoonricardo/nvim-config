@@ -43,7 +43,6 @@ return function ()
                 fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
                 end
             end, { "i", "s" }),
-        
             ["<S-Tab>"] = cmp.mapping(function()
                 if cmp.visible() then
                 cmp.select_prev_item()
@@ -53,9 +52,10 @@ return function ()
             end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
             { name = 'vsnip' }, -- For vsnip users.
+            { name = 'nvim_lsp' },
             { name = 'treesitter' },
+            { name = 'nvim_lsp_signature_help' },
             -- { name = 'luasnip' }, -- For luasnip users.
             -- { name = 'ultisnips' }, -- For ultisnips users.
             -- { name = 'snippy' }, -- For snippy users.

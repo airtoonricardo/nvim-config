@@ -40,18 +40,23 @@ require("lazy").setup({
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = conf("nvim-tree")
     },
-
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = conf("nvim-web-devicons"),
+		name = "nvim-web-devicons",
+		lazy = true,
+	},
 	{
 		-- Lua Line
 		'nvim-lualine/lualine.nvim',
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = conf("lualine")
 	},
-	{
-		-- Syntax Highlighting
-		'nvim-treesitter/nvim-treesitter',
-		config = conf("nvim-treesitter")
-	},
+  	{
+  		-- Syntax Highlighting
+  		'nvim-treesitter/nvim-treesitter',
+  		config = conf("nvim-treesitter")
+  	},
 	{
 		-- File Searching
 		'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -74,6 +79,8 @@ require("lazy").setup({
 	},
 	-- Completion with LSP
 	{'hrsh7th/cmp-nvim-lsp'},
+    -- Loads Function Signature Help
+    {'hrsh7th/cmp-nvim-lsp-signature-help'},
 	{'hrsh7th/cmp-buffer'},
 	{'hrsh7th/cmp-path'},
 	{'hrsh7th/cmp-cmdline'},
@@ -82,6 +89,7 @@ require("lazy").setup({
 		config = conf("nvim-cmp")
 	},
 	{ 'hrsh7th/vim-vsnip' },
+    -- { 'hrsh7th/cmp-vsnip' },
 	{ 'hrsh7th/vim-vsnip-integ' },
 	-- Tmux Navigation
     {'christoomey/vim-tmux-navigator'},
@@ -89,18 +97,14 @@ require("lazy").setup({
 	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
 	{'sindrets/diffview.nvim', config = conf("diffview")},
 	-- BEHAVIOUR
+    -- Enhances performance
 	{
 		"antoinemadec/FixCursorHold.nvim",
 		init = function()
 			vim.g.cursorhold_updatetime = 250
 		end,
 	},
-	{
-		"nvim-tree/nvim-web-devicons",
-		config = conf("nvim-web-devicons"),
-		name = "nvim-web-devicons",
-		lazy = true,
-	},
+    -- Colorizes Color Codes
     {
         'norcalli/nvim-colorizer.lua',
 		config = function ()
@@ -109,6 +113,26 @@ require("lazy").setup({
 				"!git"
 			})
 		end,
+    },
+    -- Functionalities
+    -- Auto-pairs TODO verify functionalities and maybe implement config
+    {
+        "windwp/nvim-autopairs",
+        opts = {}
+    },
+    -- Disables Highlight after search
+    { 'romainl/vim-cool' },
+    -- Git Integration in Vim commands
+    {'tpope/vim-fugitive'},
+    -- Surround utilities
+    {'tpope/vim-surround'},
+    -- General Vim defaults users generally agree on
+    -- {'tpope/vim-sensible'},
+    {'tpope/vim-commentary'},
+    -- Highlighting on comments
+    {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = conf('todo-comments')
     }
-
 })
