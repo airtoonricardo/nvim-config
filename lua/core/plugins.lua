@@ -138,5 +138,5 @@ require("lazy").setup({
     {'simeji/winresizer',
         init = function() vim.g.winresizer_start_key = '<C-p>' end
     },
-    { 'mg979/vim-visual-multi', branch = "main" },
+    { 'mg979/vim-visual-multi', branch = "master" },
 })
