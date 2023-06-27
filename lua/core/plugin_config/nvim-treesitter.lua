@@ -3,9 +3,10 @@ return function ()
         build = ":TSUpdate",
         ensure_installed = {
             'solidity',
-            'rust',
             'python',
-            -- 'lua',
+            'rust',
+            'lua',
+            'vim',
         },
         sync_install = false,
         highlight = {
