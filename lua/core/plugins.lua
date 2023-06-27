@@ -69,7 +69,7 @@ require("lazy").setup({
 		},
 		config = conf("telescope")
 	},
-	-- LSP Support
+-- LSP Support
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{
@@ -91,12 +91,7 @@ require("lazy").setup({
 	{ 'hrsh7th/vim-vsnip' },
     -- { 'hrsh7th/cmp-vsnip' },
 	{ 'hrsh7th/vim-vsnip-integ' },
-	-- Tmux Navigation
-    {'christoomey/vim-tmux-navigator'},
-	-- Git integration
-	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
-	{'sindrets/diffview.nvim', config = conf("diffview")},
-	-- BEHAVIOUR
+-- BEHAVIOUR
     -- Enhances performance
 	{
 		"antoinemadec/FixCursorHold.nvim",
@@ -114,7 +109,7 @@ require("lazy").setup({
 			})
 		end,
     },
-    -- Functionalities
+-- Functionalities
     -- Auto-pairs TODO verify functionalities and maybe implement config
     {
         "windwp/nvim-autopairs",
@@ -134,5 +129,10 @@ require("lazy").setup({
       "folke/todo-comments.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
       config = conf('todo-comments')
-    }
+    },
+	-- Tmux Navigation
+    {'christoomey/vim-tmux-navigator'},
+	-- Git integration
+	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
+	{'sindrets/diffview.nvim', config = conf("diffview")},
 })
