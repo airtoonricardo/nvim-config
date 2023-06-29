@@ -32,7 +32,7 @@ require("lazy").setup({
     {
         'marko-cerovac/material.nvim',
         config = function ()
-            vim.g.termguicolors=true
+			-- load the colorscheme here
             vim.g.material_style = 'deep ocean'
 			vim.cmd([[colorscheme material]])
         end
@@ -60,6 +60,13 @@ require("lazy").setup({
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = conf("lualine")
 	},
+    {
+        -- Tab Line
+        'akinsho/bufferline.nvim',
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = conf("bufferline"),
+        version = "*",
+    },
   	{
   		-- Syntax Highlighting
   		'nvim-treesitter/nvim-treesitter',
@@ -101,12 +108,12 @@ require("lazy").setup({
 	{ 'hrsh7th/vim-vsnip-integ' },
 -- BEHAVIOUR
     -- Enhances performance
-	{
-		"antoinemadec/FixCursorHold.nvim",
-		init = function()
-			vim.g.cursorhold_updatetime = 250
-		end,
-	},
+	-- {
+	-- 	"antoinemadec/FixCursorHold.nvim",
+	-- 	init = function()
+	-- 		vim.g.cursorhold_updatetime = 250
+	-- 	end,
+	-- },
     -- Colorizes Color Codes
     {
         'norcalli/nvim-colorizer.lua',
@@ -118,7 +125,6 @@ require("lazy").setup({
 		end,
     },
 -- Functionalities
-    -- Auto-pairs TODO verify functionalities and maybe implement config
     {
         "windwp/nvim-autopairs",
         opts = {}
@@ -126,7 +132,7 @@ require("lazy").setup({
     -- Disables Highlight after search
     { 'romainl/vim-cool' },
     -- Git Integration in Vim commands
-    {'tpope/vim-fugitive'},
+    -- {'tpope/vim-fugitive'},
     -- Surround utilities
     {'tpope/vim-surround'},
     -- General Vim defaults users generally agree on
