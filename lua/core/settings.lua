@@ -50,5 +50,3 @@ vim.opt.so = 5
 vim.opt.completeopt = 'menu,menuone,noselect'
 vim.g.termguicolors=true
 
--- Highlight yank
-vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
