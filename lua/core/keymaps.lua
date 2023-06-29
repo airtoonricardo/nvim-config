@@ -17,4 +17,10 @@ vim.keymap.set('v', '˚', "'<-2<CR>gv=gv")
 
 vim.keymap.set('n', '<leader>r', ':so ~/.config/nvim/init.lua<CR>')
 
+-- Diagnostics mappings
+vim.keymap.set('n', '<leader>do', ':lua vim.diagnostic.open_float()<CR>')
+vim.keymap.set('n', '<leader>d[', ':lua vim.diagnostic.goto_prev()<CR>')
+vim.keymap.set('n', '<leader>d]', ':lua vim.diagnostic.goto_next()<CR>')
+vim.keymap.set('n', '<leader>dd', ':Telescope diagnostics<CR>')
+
 
