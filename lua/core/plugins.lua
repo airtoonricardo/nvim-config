@@ -107,13 +107,6 @@ require("lazy").setup({
     -- { 'hrsh7th/cmp-vsnip' },
 	{ 'hrsh7th/vim-vsnip-integ' },
 -- BEHAVIOUR
-    -- Enhances performance
-	-- {
-	-- 	"antoinemadec/FixCursorHold.nvim",
-	-- 	init = function()
-	-- 		vim.g.cursorhold_updatetime = 250
-	-- 	end,
-	-- },
     -- Colorizes Color Codes
     {
         'norcalli/nvim-colorizer.lua',
@@ -131,8 +124,6 @@ require("lazy").setup({
     },
     -- Disables Highlight after search
     { 'romainl/vim-cool' },
-    -- Git Integration in Vim commands
-    -- {'tpope/vim-fugitive'},
     -- Surround utilities
     {'tpope/vim-surround'},
     -- General Vim defaults users generally agree on
