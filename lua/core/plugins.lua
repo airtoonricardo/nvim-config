@@ -26,16 +26,8 @@ require("lazy").setup({
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- load the colorscheme here
-			-- vim.cmd([[colorscheme tokyonight]])
+			vim.cmd([[colorscheme tokyonight-night]])
 		end,
-    },
-    {
-        'marko-cerovac/material.nvim',
-        config = function ()
-			-- load the colorscheme here
-            vim.g.material_style = 'deep ocean'
-			vim.cmd([[colorscheme material]])
-        end
     },
     {
         "HiPhish/nvim-ts-rainbow2",
@@ -60,13 +52,6 @@ require("lazy").setup({
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = conf("lualine")
 	},
-    {
-        -- Tab Line
-        'akinsho/bufferline.nvim',
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        config = conf("bufferline"),
-        version = "*",
-    },
   	{
   		-- Syntax Highlighting
   		'nvim-treesitter/nvim-treesitter',
@@ -74,7 +59,7 @@ require("lazy").setup({
   	},
 	{
 		-- File Searching
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			{
@@ -84,7 +69,12 @@ require("lazy").setup({
 		},
 		config = conf("telescope")
 	},
--- LSP Support
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        config = conf("telescope-browser")
+    },
+    -- LSP Support
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{
@@ -127,8 +117,15 @@ require("lazy").setup({
     -- Surround utilities
     {'tpope/vim-surround'},
     -- General Vim defaults users generally agree on
-    -- {'tpope/vim-sensible'},
-    {'tpope/vim-commentary'},
+    {
+        'numToStr/Comment.nvim',
+        config = function ()
+            require('Comment').setup()
+        end,
+        lazy = false,
+    },
+    -- Shows current cursor context
+    {'wellle/context.vim'},
     -- Highlighting on comments
     {
       "folke/todo-comments.nvim",
@@ -139,7 +136,6 @@ require("lazy").setup({
     {'christoomey/vim-tmux-navigator'},
 	-- Git integration
 	{ "lewis6991/gitsigns.nvim", config = conf("gitsigns") },
-	{'sindrets/diffview.nvim', config = conf("diffview")},
     {'simeji/winresizer',
         init = function() vim.g.winresizer_start_key = '<C-p>' end
     },
