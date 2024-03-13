@@ -12,6 +12,11 @@ return function ()
             separator_style = "thin",
             offsets = {
                 {
+                  filename = "NvimTree_1",
+                  text = "Choosing File",
+                  text_align = "center",
+                },
+                {
                   filetype = "NvimTree",
                   text = "Files",
                   text_align = "center",
