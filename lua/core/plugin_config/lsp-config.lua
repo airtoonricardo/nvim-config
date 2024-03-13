@@ -4,8 +4,9 @@ return function ()
 
     local servers = {
         "lua_ls",
-        "solidity",
-        "rust_analyzer",
+        "tsserver",
+        "solidity_ls_nomicfoundation",
+        -- "rust_analyzer",
     }
 
     require("mason-lspconfig").setup({
@@ -30,15 +31,16 @@ return function ()
 
     -- Setting default capabilities on all LSP Servers
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local lspconfig = require('lspconfig')
 
     local function add_capabilities()
         for _, lsp in ipairs(servers) do
-            require('lspconfig')[lsp].setup {
+            lspconfig[lsp].setup {
                 capabilities = capabilities,
                 on_attach = attach_function,
             }
         end
-        require('lspconfig')['lua_ls'].setup{
+        lspconfig['lua_ls'].setup{
             settings = {
                 Lua = {
                     diagnostics = {
@@ -49,6 +51,13 @@ return function ()
             }
         }
     end
+
+    require('lspconfig').solidity_ls_nomicfoundation.setup{
+        cmd = {'nomicfoundation-solidity-language-server', '--stdio'},
+        filetypes = { 'solidity' },
+        require("lspconfig.util").root_pattern "foundry.toml",
+        single_file_support = true,
+    }
 
     add_capabilities()
 end
