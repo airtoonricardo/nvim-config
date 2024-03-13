@@ -16,6 +16,11 @@ return function ()
             enable = true,
             update_cwd = true,
         },
+        actions = {
+            open_file = {
+                quit_on_open = true,
+            },
+        },
     }
     -- Mappings
     vim.keymap.set('n', '`', ':NvimTreeFindFileToggle<CR>')
