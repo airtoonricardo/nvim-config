@@ -1,7 +1,6 @@
 -- Vim General Options
 vim.opt.cursorline = true
 vim.opt.colorcolumn = '120'
-vim.opt.termencoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.fileencodings = 'ucs-bom,utf-8,chinese,cp936'
 

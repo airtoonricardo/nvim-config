@@ -118,7 +118,8 @@ require("lazy").setup({
     { 'romainl/vim-cool' },
     -- Surround utilities
     {'tpope/vim-surround'},
-    -- General Vim defaults users generally agree on
+    -- General Vim defaults users usually agree on
+    -- {'tpope/vim-sensible'},
     {
         'numToStr/Comment.nvim',
         config = function ()

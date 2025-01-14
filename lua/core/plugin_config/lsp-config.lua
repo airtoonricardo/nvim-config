@@ -4,7 +4,7 @@ return function ()
 
     local servers = {
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "solidity_ls_nomicfoundation",
         -- "rust_analyzer",
     }
