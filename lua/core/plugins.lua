@@ -71,6 +71,7 @@ require("lazy").setup({
 	},
     {
         "nvim-telescope/telescope-file-browser.nvim",
+        lazy = true,
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
         config = conf("telescope-browser")
     },
@@ -100,6 +101,7 @@ require("lazy").setup({
     -- Colorizes Color Codes
     {
         'norcalli/nvim-colorizer.lua',
+        lazy = true,
 		config = function ()
 			require("colorizer").setup({
 				"*",
@@ -124,8 +126,8 @@ require("lazy").setup({
         end,
         lazy = false,
     },
-    -- Shows current cursor context
-    {'wellle/context.vim'},
+    -- Shows current cursor context - Lightweight alternative to context.vim
+    {'nvim-treesitter/nvim-treesitter-context'},
     -- Highlighting on comments
     {
       "folke/todo-comments.nvim",
